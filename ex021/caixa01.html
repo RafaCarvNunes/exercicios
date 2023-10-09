@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caixas</title>
+    <style>
+        h1 { /* box-level */
+
+            /* Eu posso fazer esse h1 virar um inline-box, usando:
+            - display: inline;
+            se colocar inline não é possivel alterar altura (height) e largura (width).
+
+            - display: inline-block;
+            ele continua sendo um display inline mas você pode mudar algumas caracteristicas como modo em bloco.
+
+            - display: block;
+            neste caso ele vira um bloco de largura inteira da linha
+            */
+
+            background-color: lightgray;
+            height: 300px;
+            width: 300px;
+
+            border-width: 10px;
+            border-style: solid;
+            border-color: darkslategray;
+            /* essas linhas podem ser simplificadas por:
+            border: 10px solid darkslategray; - nome shorthand
+             */
+
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            /* essas linhas podem ser simplificadas por:
+            padding: 10px; se o resultado é igual, pode colocar apenas 01 valor - nome shorthand
+             */
+
+            margin-top: 20px;
+            margin-right: auto;
+            margin-bottom: 40px;
+            margin-left: auto;
+             /* essas linhas podem ser simplificadas por:
+            marging: 20px auto 40px auto; - nome shorthand
+             */
+            
+            outline-width: 5px;
+            outline-style: dashed;
+            outline-color: salmon;
+
+              /* essas linhas podem ser simplificadas por:
+            outline: 5px dashed salmon; - nome shorthand
+             */
+        }
+
+        /* se for centralizar uma caixa tem que usar a margin: auto - se for um texto é text-aling: center */
+
+        /* 
+        - a medida margin é da borda pra fora
+        - a medida padding é da borda pra dentro 
+        - a medida outline é a medida que fica entre a borda e a margin - só que dentro da margin
+        */
+
+        a { /* inline-level */
+            border-width: 10px;
+            border-style: groove;
+            border-color: red;
+
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de caixa box-level</h1>
+    <p>Parágrafos também são exemplos de box-level, mas os <a href="#">links são exemploi de caixas inlin-level</a>. Vamos ver como tudo isso funciona</p>
+    <!--Se vc não tem nenhum link para incluir, utilizar o "#"-->
+</body>
+</html>

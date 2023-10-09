@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos com HTML5</title>
+</head>
+<body>
+    <h1>Inserindo vídeos hospedados localmente</h1>
+    <p>Esta vídeo esta hospedado no meu próprio servidor.</p>
+
+    <video src="midia/vídeo-teste-para-o-cursoHTML.mp4" width="500" poster="imagens/capa-video.png" controls></video> <!--este caminha é para quando incluir o vídeo em apenas 1 formato, sempre incluir em todos formatos conforme modelo abaixo-->
+
+    <!--
+
+     <video width="500" poster="imagens/capa-video.png" controls>
+        <source src="midia/vídeo-teste-para-o-cursoHTML.mp4" type="vídeo/mp4">
+        <source src="midia/vídeo-teste-para-o-cursoHTML.m4v" type="vídeo/mp4">
+        <source src="midia/vídeo-teste-para-o-cursoHTML.webm" type="vídeo/webm">
+        <source src="midia/vídeo-teste-para-o-cursoHTML.ogg" type="vídeo/ogg">
+        <p>Caso o vídeo não abra, seu navegador não tem compatibilidade com reprodução de vídeos.</p>
+    </video>
+    -->
+ 
+    <video width="400" poster="imagens/capa-video.png" controls autoplay loop>
+        <source src="midia/vídeo-teste-para-o-cursoHTML.mp4" type="vídeo/mp4">
+    </video>
+
+    <h1>Inserindo vídeos do YouTube</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/97WPD5Qpsns?si=7Z5j01PJ0m56bQ2F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+</body>
+</html>

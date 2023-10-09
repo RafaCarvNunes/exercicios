@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+
+        /*  PARA CRIAR OS SELETORES PERSONALIZADOS 
+            #  = id
+            .  = class
+            :  = pseudo-class
+            :: = pseudo-element
+            >  = children
+        */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Mudando a configuração genérica do link */
+        a {
+            color: red;
+            text-decoration: none; /* para tirar o sublinhado do link */
+            font-weight: bold;
+        }
+
+        /* Outros Pseudo-classes */
+        /* Esse é para o link que ja foi visitado */
+        a:visited {
+            color: darkred;
+        }
+
+         /* Outros Pseudo-classes */
+        /* Esse é para quando passa o mause por cima do texto */
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+        
+         /* Outros Pseudo-classes */
+        /* Esse é para a cor ativa do texto quanto estiver clicando no link */
+        a:active {
+            color: yellow;
+            text-decoration: underline black;
+        }
+        
+         /* Pseudo-Elementos = :: */
+        /* Esse é para incluir um conteúdo/texto ou informação antes ou após os links */
+        a::before {
+            content: ' [link] ⇒ ';
+            text-decoration: none; /*não quero em negrito*/
+            font-weight: normal;
+            color: darkgray;
+        }
+        a::after {
+            content: ' ⇐ [link]';
+            text-decoration: none; /*não quero em negrito*/
+            font-weight: normal;
+            color: darkgray;
+        }
+
+        /* Essa opção você pode utilizar se quiser algum link diferente na lista */
+        .especial {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalizando Links</h1>
+    <ul>
+        <li><a href="https://github.com/RafaCarvNunes/RafaCarvNunes" target="_blank">Repositório GitHub</a></li>
+        <li><a href="https://www.youtube.com/channel/UC8mESsD1nNXxIJFDRVJI9hQ" class="especial">Canal do YouTube</a></li>
+        <li><a href="https://www.eagleviewbr.com/">Site da Eagle View</a></li>
+    </ul>
+</body>
+</html>
