@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alinhamento vertical</title>
+    <style>
+        #container {
+            background-image: url('imagens/target001.png');
+            background-size: 100% 100%;
+
+            position: relative; /*todo posicionamento de um box por padrão é relativo, mas aqui você deixa explicito */
+            height: 95vh;
+            padding: 10px;
+            background-color: purple;
+        }
+
+        #conteudo {
+            background-image: url('imagens/target001.png');
+            background-size: 100% 100%;
+
+            position: absolute;
+            height: 200px;
+            width: 400px;
+            background-color: yellow;
+
+            /*quando o position: absolute, você pode configurar essas 02 propriedades (valores pode ser em pixel (px) pode ser me %) */
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+            /*para centralizar a caixa é necessario aplicar essa transformação. O primeiro valor movimente para esquerda (-) e direita (+) e o segundo valor para cima (-) e para baixo (+) */
+        }
+    </style>
 </head>
 <body>
-    
+    <section id="container">
+        <article id="conteudo">
+
+        </article>
+    </section>
+    <!--quando você vai centralizar verticalmente uma caixa, precisa ter a presença de um "container" e "conteudo"-->
 </body>
 </html>
