@@ -1,8 +1,17 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Sriracha&display=swap');
+
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', sans-serif;
+    --fonte3: 'Sriracha', cursive;
+}
+
 * {
     margin: 0px;
     padding: 0px;
+    font-size: 1em;
 }
 
 /*esse comando (* {) é para gerar uma formatação em todos os elementos */
@@ -10,6 +19,7 @@
 html, body {
     min-height: 100vh; /*não necessario mas é bom colocar essa regra, é para mostrar sempre 100% do site - VH é viewport height (se fosse VW seria a largura) */
     background-color: darkgray;
+    font-family: var(--fonte1);
 }
 
 header {
@@ -22,6 +32,8 @@ header > h1 {
     padding-top: 50px;
     /*para transformar todas letras em MAIUSCULAS usar essa TAG: text-transform: uppercase */
     font-variant: small-caps; /*nesta técnica todas as letras ficam maiusculas porém as primeiras letras são maiores (fica mais semantico) */
+    font-family: var(--fonte2);
+    font-size: 9vw; /*nesta opção ele fica 10% da largura da tela, aumenta e diminui conforme a alteração do tamanho da tela */
 }
 
 header > p {
@@ -45,6 +57,8 @@ section {
     line-height: 2em;
     /*essa line-height aumenta o espaçamento das frases em altura */
     padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size: 3vw; /*nesta opção (vw) a letra vai aumentar e diminuir conforme o tamanho da tela */
 }
 
 section.normal {
@@ -58,7 +72,8 @@ section.imagem {
 }
 
 section.imagem > p {
-    width: 400px;
+    display: inline-block;
+    padding: 8px;
     background-color: rgba(0, 0, 0, 0.253);
 }
 /*essa section.imagem > p vai fazer mais sentido quando colocar a imagem */
