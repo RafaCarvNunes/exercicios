@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas com Cabeçalho Fixo</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+            position: relative; /*é obrigatório colocar essa tag para ter o cabeçalho fixo - é uma configuração comportamental*/
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        thead, tfoot {
+            background-color: #383838;
+            color: white;
+        }
+
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: #383838;
+        } /*essas são as tags para ter o cabeçalho fixo - position: sticky + top: -1 ou 0px (depende do navegador) e o mesmo background-color do thead, tfoot*/
+
+        tbody > tr:nth-child(odd) { /*aqui também poderia ser 2n-1 para as células impar */
+            background-color: white;
+            /* se necessário você pode colocar mais tags como: font-weight: bold; */
+        }
+
+        tbody > tr:nth-child(even) { /*aqui também poderia ser 2n para as céluas par */
+            background-color: lightgray;
+        }
+
+
+        td.num {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uso de tabelas grandes</h1>
+    <!--
+        ANATOMIA PARA TABELAS GRANDES
+        TABLE = tabela
+            CAPTION = legenda da tabela (no caption não pode colocar TR e nem TD)
+            THEAD = cabeça da tabela
+                TR, TD, TH
+            TBODY = corpo da tabela
+                TR, TD, TH
+            TFOOT = footer da tabela
+                TR, TD (utlizado para dado), TH (utilizado para titulo)
+    -->
+    <table>
+        <caption>População das Unidades Federativas</caption>
+        <thead>
+            <tr>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 100px;">População</th>
+                <!--
+                    - De forma semântica é super importante definficar o <th scope="col"> para os computadores de busca (google). 
+                    - A TAG style foi inserida aqui somente para fazer uma configuração pontual da largura da célula.
+                -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>São Paulo</td>
+                <td class="num">44 420 459</td>
+            </tr>
+            <tr>
+                <td>Minas Gerais</td>
+                <td class="num">20 538 718</td>
+            </tr>
+            <tr>
+                <td>Rio de Janeiro</td>
+                <td class="num">16 054 524</td>
+            </tr>
+            <tr>
+                <td>Bahia</td>
+                <td class="num">14 136 417</td>
+            </tr>
+            <tr>
+                <td>Paraná</td>
+                <td class="num">11 443 208</td>
+            </tr>
+            <tr>
+                <td>Rio Grande do Sul</td>
+                <td class="num">10 880 506</td>
+            </tr>
+            <tr>
+                <td>Pernambuco</td>
+                <td class="num">9 058 155</td>
+            </tr>
+            <tr>
+                <td>Ceará</td>
+                <td class="num">8 116 132</td>
+            </tr>
+            <tr>
+                <td>Pará</td>
+                <td class="num">8 116 132</td>
+            </tr>
+            <tr>
+                <td>Santa Catarina</td>
+                <td class="num">7 609 601</td>
+            </tr>
+            <tr>
+                <td>Goiás</td>
+                <td class="num">7 055 228</td>
+            </tr>
+            <tr>
+                <td>Maranhão</td>
+                <td class="num">6 775 152</td>
+            </tr>
+            <tr>
+                <td>Paraíba</td>
+                <td class="num">3 974 495</td>
+            </tr>
+            <tr>
+                <td>Amazonas</td>
+                <td class="num">3 941 175</td>
+            </tr>
+            <tr>
+                <td>Espírito Santo</td>
+                <td class="num">3 833 486</td>
+            </tr>
+            <tr>
+                <td>Mato Grosso</td>
+                <td class="num">3 658 813</td>
+            </tr>
+            <tr>
+                <td>Rio Grande do Norte</td>
+                <td class="num">3 302 406</td>
+            </tr>
+            <tr>
+                <td>Piauí</td>
+                <td class="num">3 269 200</td>
+            </tr>
+            <tr>
+                <td>Alagoas</td>
+                <td class="num">3 127 511</td>
+            </tr>
+            <tr>
+                <td>Distrito Federal</td>
+                <td class="num">2 817 068</td>
+            </tr>
+            <tr>
+                <td>Mato Grosso do Sul</td>
+                <td class="num">2 756 700</td>
+            </tr>
+            <tr>
+                <td>Sergipe</td>
+                <td class="num">2 209 558</td>
+            </tr>
+            <tr>
+                <td>Rondônia</td>
+                <td class="num">1 581 016</td>
+            </tr>
+            <tr>
+                <td>Tocantins</td>
+                <td class="num">1 511 459</td>
+            </tr>
+            <tr>
+                <td>Acre</td>
+                <td class="num">830 026</td>
+            </tr>
+            <tr>
+                <td>Amapá</td>
+                <td class="num">733 508</td>
+            </tr>
+            <tr>
+                <td>Roraima</td>
+                <td class="num">636 303</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th scope="row">Total de Habitantes</th>
+            <td class="num"><strong>203 062 512</strong></td>
+        </tfoot>
+         <!--de forma semântica é super importante definficar o <th scope="row"> para os computadores de busca (google) -->
+    </table>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi explicabo laborum, perspiciatis aut obcaecati. Blanditiis dolorem suscipit ullam itaque quaerat ab! Sapiente vero, mollitia similique velit cum dolor deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolor corrupti ullam amet illum? Eius incidunt quod ullam ab numquam nesciunt iste quia inventore minus et. Enim nobis consectetur sint! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod veritatis facere ut consectetur corrupti qui totam, minus, cum voluptatibus nisi porro. Autem aperiam natus soluta provident error omnis animi veniam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat animi corporis, beatae quam quibusdam eveniet consequuntur! Facilis ullam obcaecati ut aspernatur officiis, similique repellat tenetur exercitationem, expedita incidunt consequatur pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nostrum repudiandae ab iste, obcaecati est deleniti at quam eos ut id commodi minima ipsum assumenda officia quos accusamus laudantium impedit?</p>
+</body>
+</html>
