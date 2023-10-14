@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        iframe {
+            width: 400px;            
+        }
+    </style>
+</head>
+<body>
+    <h1>Meu site principal</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit culpa impedit iure blanditiis corrupti voluptas quia ducimus ipsam, eveniet dolores quis, temporibus consequuntur facere aliquam laudantium voluptatum sapiente omnis totam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident aperiam eaque illo quia, ullam ad rerum sit, incidunt consequatur sunt quidem omnis quod delectus nostrum soluta dolore ipsa voluptatibus quos!</p>
+
+    <iframe src="pagina004.html" frameborder="1" sandbox="sandbox" referrerpolicy="no-referrer">
+        Seu navegador não é compatível com isso. 
+    </iframe>
+    <!--
+        - Quando cria a TAG sandbox="sandbox" você envita ações de hakers para capturar os dados de navegação.
+        - Para ter o maximo de segurança, utilizar as 02 TAGS (sandbox="sandbox" referrerpolicy="no-referrer"), a segunda opções garante que todos os dados enviados não serão utilizados como referência.
+        - Quando criar o SANDBOX, também é possível permitir algumas utilizações como: sandbox="allow-same-origin allow-forms allow-scripts". Todas as outras não informadas serão bloqueadas.
+    -->
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, consequuntur? Dolores pariatur laborum dolor, similique mollitia incidunt nostrum doloribus, beatae saepe ipsum nisi. Quia numquam labore aliquam placeat autem perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis qui perferendis fugiat quo sunt est quod repellat ratione repudiandae optio cum dignissimos quos dicta, hic laboriosam eos, alias voluptates vel.</p>
+</body>
+</html>
