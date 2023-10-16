@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste de formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <p>
+            <label for="iusu">Usuário: </label> <!--A TAG (for="iusu") é uma tag para informar que é ususario-->
+            <input type="text" name="usu" id="iusu" required minlength="5" maxlength="15" size="12" placeholder="Nome do usuário" autocomplete="username">
+        </p> <!--
+            - Utilizar esse atributo extra (required) para tornar esse campo obrigatório. Se quiser também pode definir um número mínimo e maximo de letras a utilizar com as TAGs (required minlength="5" maxlength="15).
+            - Utilizar o size="8" (ou qualquer outro valor) para definir quantas letras irão aparecer no campo.
+            - Utilizar a TAG (placeholder="Nome do usuário") para poder aparecer uma frase do que digitar no fundo.
+            - Utilizar a TAG (autocomplete="username") para auto preencher o nome de usuário ja utilizado, para funcionar essa TAG no campo <form> tem que estar a TAG (autocomplete="on").
+            - Aqui utilizamos paragráfo <p> mas poderia ser uma div <div>-->
+        <p>
+            <label for="isen">Senha: </label>
+            <input type="password" name="sen" id="isen" required minlength="6" maxlength="15">
+        </p> <!--Essa TAG (input type="password") é para aparecer * quando digita-->
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
